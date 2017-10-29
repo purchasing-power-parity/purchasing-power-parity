@@ -21,7 +21,7 @@ const mapGeoToPpp = response => ({
 });
 
 const getGeo = () =>
-  console.log(`asd`) || axios.get(GEO_API_URL)
+  axios.get(GEO_API_URL)
     .then(mapGeoToPpp);
 
 const mapCountryMetaToPpp = pppInformation => response => ({
