@@ -27,12 +27,12 @@ ppp-Object:
   countryCodeIsoAlpha3: "IND",
   countryName: "India",
   currenciesCountry: [{
-  
+
   }],
   currencyMain: {
-    exchangeRate: 65.06, 
-    code: "INR", 
-    name: "Indian rupee", 
+    exchangeRate: 65.06,
+    code: "INR",
+    name: "Indian rupee",
     symbol: "₹"
   },
   ppp: 17.536,
@@ -44,7 +44,15 @@ The `currencyMain` property with its `exchangeRate` property is used to compute 
 
 ## Who is using PPP?
 
-Make a public statement that you are using PPP to make your products affordable for everyone. Add yourself to the list/
+Make a public statement that you are using PPP to make your products affordable for everyone. Add yourself to the list:
 
 * [Road to React](https://roadtoreact.com/)
-...
+* ...
+
+## Contribution
+
+The project is in an early stage, so please feel free to contribute to it. Contribution in three steps:
+
+* create an Issue
+* discuss with maintainers and contributors about the issue
+* create a Pull Request if the issue should be solved
