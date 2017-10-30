@@ -1,8 +1,8 @@
 {
   "name": "purchasing-parity-power",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "Make your stuff affordable for everyone around the globe.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "axios": "^0.17.0"
   },

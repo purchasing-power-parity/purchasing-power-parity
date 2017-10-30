@@ -4,7 +4,9 @@ const BASE_CURRENCY = 'USD';
 const GEO_API_URL = 'https://freegeoip.net/json/';
 const COUNTRY_META_API = 'https://restcountries.eu/rest/v2/alpha/';
 const EXCHANGE_RATES_API = `https://api.fixer.io/latest?base=${BASE_CURRENCY}`;
+
 const QUANDL_API = 'https://www.quandl.com/api/v3/';
+const QUANDL_API_KEY ='ZzCZFbPiramjEjcrhx1m';
 
 const getYear = () =>
   new Date().getFullYear();
@@ -13,7 +15,7 @@ const getLastYear = () =>
   getYear() - 1;
 
 const getQuandlApiUrl = countryCodeIsoAlpha3 =>
-  `${QUANDL_API}datasets/ODA/${countryCodeIsoAlpha3}_PPPEX.json?start_date=${getLastYear()}-01-01&end_date=${getYear()}-01-01`;
+  `${QUANDL_API}datasets/ODA/${countryCodeIsoAlpha3}_PPPEX.json?start_date=${getLastYear()}-01-01&end_date=${getYear()}-01-01&api_key=${QUANDL_API_KEY}`;
 
 const mapGeoToPpp = response => ({
   countryName: response.data.country_name,
