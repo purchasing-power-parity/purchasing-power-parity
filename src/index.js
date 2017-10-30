@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const BASE_CURRENCY = 'USD';
 const GEO_API_URL = 'https://freegeoip.net/json/';
@@ -91,4 +91,4 @@ const getPpp = () =>
       }
     });
 
-module.export = getPpp;
+export default getPpp;
