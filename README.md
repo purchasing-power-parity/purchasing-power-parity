@@ -1,18 +1,50 @@
-# Simple Node Server with Babel
+# Purchasing Parity Power
 
-An easy way to get started with JavaScript on the command line.
+Online products should be made affordable for everyone around the world. This module is a simple way to make [Purchasing Parity Power](https://en.wikipedia.org/wiki/Purchasing_power_parity) available in your browser.
 
-## Requirements
+Install:
 
-* [node & npm](https://nodejs.org/en/)
-* [git](https://www.robinwieruch.de/git-essential-commands/)
+`npm install purchasing-parity-power`
 
-## Installation
+Use:
 
-* `git clone git@github.com:rwieruch/node-babel-server.git`
-* `cd node-babel-server`
-* `npm install`
-* `npm start`
+```
+import getPpp from 'purchasing-parity-power'
 
-Adjust your Babel presets in *package.json* if you like to add or remove future JavaScript ES features.
-# purchasing-parity-power
+let originalPrice = 99.99;
+let discountPrice;
+
+getPpp().then(function (ppp) => {
+  discountPrice = ppp.pppConversionFactor * originalPrice;
+});
+```
+
+ppp-Object:
+
+```
+{
+  countryCodeIsoAlpha2: "IN",
+  countryCodeIsoAlpha3: "IND",
+  countryName: "India",
+  currenciesCountry: [{
+  
+  }],
+  currencyMain: {
+    exchangeRate: 65.06, 
+    code: "INR", 
+    name: "Indian rupee", 
+    symbol: "₹"
+  },
+  ppp: 17.536,
+  pppConversionFactor: 0.2695358130956041,
+}
+```
+
+The `currencyMain` property with its `exchangeRate` property is used to compute the `pppConversionFactor` by using the `ppp`.
+
+## Who is using PPP?
+
+Make a public statement that you are using PPP to make your products affordable for everyone. Add yourself to the list/
+
+* [Road to React](https://roadtoreact.com/)
+...
