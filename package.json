@@ -1,5 +1,5 @@
 {
-  "name": "purchasing-parity-power",
+  "name": "purchasing-power-parity",
   "version": "1.0.7",
   "description": "Make your stuff affordable for everyone around the globe.",
   "main": "lib/index.js",
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rwieruch/purchasing-parity-power.git"
+    "url": "git+https://github.com/rwieruch/purchasing-power-parity.git"
   },
   "keywords": [],
   "author": "“Robin <“wrobin@gmx.net”> (https://www.robinwieruch.de)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rwieruch/purchasing-parity-power/issues"
+    "url": "https://github.com/rwieruch/purchasing-power-parity/issues"
   },
-  "homepage": "https://github.com/rwieruch/purchasing-parity-power#readme"
+  "homepage": "https://github.com/rwieruch/purchasing-power-parity#readme"
 }
