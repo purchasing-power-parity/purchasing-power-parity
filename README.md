@@ -12,7 +12,7 @@ Not everyone is able to pay for the default pricings of the western world. Onlin
 
 **Use:**
 
-```
+```js
 import getPpp from 'purchasing-power-parity';
 
 let originalPrice = 99.99;
@@ -27,7 +27,7 @@ Adjust your prices when the pppConversionFactor goes below 1. Add an optional ba
 
 **ppp-object:**
 
-```
+```json
 {
   countryCodeIsoAlpha2: "IN",
   countryCodeIsoAlpha3: "IND",
@@ -60,7 +60,6 @@ The `currencyMain` property with its `exchangeRate` property is used to compute 
 Public statement that you or your company is using PPP to make their products affordable to everyone around the world:
 
 * [Road to React](https://roadtoreact.com/)
-* ...
 
 ## Contribution
 
