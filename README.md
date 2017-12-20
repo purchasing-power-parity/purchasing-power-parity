@@ -27,7 +27,7 @@ Adjust your prices when the pppConversionFactor goes below 1. Add an optional ba
 
 **ppp-object:**
 
-```json
+```js
 {
   countryCodeIsoAlpha2: "IN",
   countryCodeIsoAlpha3: "IND",
