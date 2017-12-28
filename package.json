@@ -14,7 +14,7 @@
   "scripts": {
     "compile": "babel --presets es2015,stage-2 -d lib/ src/",
     "prepublish": "npm run compile",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
