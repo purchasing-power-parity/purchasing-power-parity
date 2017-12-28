@@ -1,5 +1,7 @@
 # Purchasing Power Parity
 
+[![Build Status](https://travis-ci.org/rwieruch/purchasing-power-parity.svg?branch=master)](https://travis-ci.org/rwieruch/purchasing-power-parity)
+
 Not everyone is able to pay for the default pricings of the western world. Online products should be made affordable for everyone around the world. This module is a simple way to make [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) available in your browser. See how it could look like in your application for someone buying your product from another country:
 
 <img width="1276" alt="screen shot 2017-11-02 at 08 40 54" src="https://user-images.githubusercontent.com/2479967/32305725-a8186744-bfa9-11e7-9d58-a074c5b34982.png">
