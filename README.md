@@ -20,7 +20,7 @@ import getPpp from 'purchasing-power-parity';
 let originalPrice = 99.99;
 let discountPrice;
 
-getPpp().then(function (ppp) => {
+getPpp().then((ppp) => {
   discountPrice = ppp.pppConversionFactor * originalPrice;
 });
 ```
