@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rwieruch/purchasing-power-parity.svg?branch=master)](https://travis-ci.org/rwieruch/purchasing-power-parity)
 
-Not everyone is able to pay for the default pricings of the western world. Online products should be made affordable for everyone around the world. This module is a simple way to make [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) available in your browser. See how it could look like in your application for someone buying your product from another country:
+Not everyone is able to pay for the default pricings of the western world. Online products should be made affordable for everyone around the world. This package is a simple way to make [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) available in your browser. See how it could look like in your application for someone buying your product from another country:
 
 <img width="1276" alt="screen shot 2017-11-02 at 08 40 54" src="https://user-images.githubusercontent.com/2479967/32305725-a8186744-bfa9-11e7-9d58-a074c5b34982.png">
 
@@ -25,7 +25,7 @@ getPpp().then((ppp) => {
 });
 ```
 
-Adjust your prices when the pppConversionFactor goes below 1. Add an optional banner for your customers to make them aware of it.
+So you can adjust your prices when the `pppConversionFactor` goes below 1 and add an optional banner for your customers to make them aware of it. What other information is in the returned PPP object?
 
 **ppp-object:**
 
@@ -55,13 +55,14 @@ The `currencyMain` property with its `exchangeRate` property is used to compute 
 ## Limitations
 
 * runs only in the browser
-* so far, only takes USD as baseline
+* takes only USD as baseline
 
 ## Who uses PPP?
 
-Public statement that you or your company is using PPP to make their products affordable to everyone around the world:
+This node package was inspired by [Wesbos](https://twitter.com/wesbos) who sells his courses with PPP. There are other people which make their products affordable to everyone around the world by using PPP. You can add your project/company/product/service/... to the list when you are using this package:
 
 * [Road to React](https://roadtoreact.com/)
+* ...
 
 ## Contribution
 
