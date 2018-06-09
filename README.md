@@ -12,6 +12,9 @@ Not everyone is able to pay for the default pricings of the western world. Onlin
 
 `npm install purchasing-power-parity`
 
+* get your [OpenExchangeRates API Key](https://openexchangerates.org/)
+* get your [Quandl API Key](https://docs.quandl.com/docs/getting-started)
+
 **Use:**
 
 ```js
@@ -20,7 +23,7 @@ import getPpp from 'purchasing-power-parity';
 let originalPrice = 99.99;
 let discountPrice;
 
-getPpp().then((ppp) => {
+getPpp(OPEN_EXCHANGE_RATES_API_KEY, QUANDL_API_KEY).then((ppp) => {
   discountPrice = ppp.pppConversionFactor * originalPrice;
 });
 ```
