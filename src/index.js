@@ -1,12 +1,9 @@
 import axios from 'axios';
 
-const BASE_CURRENCY = 'USD';
 const GEO_API_URL = 'https://freegeoip.net/json/';
 const COUNTRY_META_API = 'https://restcountries.eu/rest/v2/alpha/';
-const EXCHANGE_RATES_API = `https://api.fixer.io/latest?base=${BASE_CURRENCY}`;
-
+const EXCHANGE_RATES_API = 'https://openexchangerates.org/api/latest.json';
 const QUANDL_API = 'https://www.quandl.com/api/v3/';
-const QUANDL_API_KEY ='ZzCZFbPiramjEjcrhx1m';
 
 const getYear = () =>
   new Date().getFullYear();
@@ -14,8 +11,8 @@ const getYear = () =>
 const getLastYear = () =>
   getYear() - 1;
 
-const getQuandlApiUrl = countryCodeIsoAlpha3 =>
-  `${QUANDL_API}datasets/ODA/${countryCodeIsoAlpha3}_PPPEX.json?start_date=${getLastYear()}-01-01&end_date=${getYear()}-01-01&api_key=${QUANDL_API_KEY}`;
+const getQuandlApiUrl = (quandlApiKey, countryCodeIsoAlpha3) =>
+  `${QUANDL_API}datasets/ODA/${countryCodeIsoAlpha3}_PPPEX.json?start_date=${getLastYear()}-01-01&end_date=${getYear()}-01-01&api_key=${quandlApiKey}`;
 
 const mapGeoToPpp = response => ({
   countryName: response.data.country_name,
@@ -57,8 +54,8 @@ const mapExchangeRatesToPpp = pppInformation => response =>
     currencyMain: findExchangeRate(response.data.rates, pppInformation.currenciesCountry),
   });
 
-const fetchExchangedRates = country =>
-  axios.get(EXCHANGE_RATES_API)
+const fetchExchangedRates = openexchangeratesApiKey => country =>
+  axios.get(`${EXCHANGE_RATES_API}?app_id=${openexchangeratesApiKey}`)
     .then(mapExchangeRatesToPpp(country));
 
 const mapToPpp = pppInformation => response =>
@@ -67,8 +64,8 @@ const mapToPpp = pppInformation => response =>
     ppp: response.data.dataset.data[0][1],
   });
 
-const fetchPpp = pppInformation =>
-  axios.get(getQuandlApiUrl(pppInformation.countryCodeIsoAlpha3))
+const fetchPpp = quandlApiKey => pppInformation =>
+  axios.get(getQuandlApiUrl(quandlApiKey, pppInformation.countryCodeIsoAlpha3))
     .then(mapToPpp(pppInformation));
 
 const computePppConversionFactor = ({ currencyMain, ppp }) =>
@@ -79,11 +76,11 @@ const getPppConversionFactor = pppInformation => ({
   pppConversionFactor: computePppConversionFactor(pppInformation),
 });
 
-const getPpp = () =>
+const getPpp = (openexchangeratesApiKey, quandlApiKey) =>
   getGeo()
     .then(fetchCountryMeta)
-    .then(fetchExchangedRates)
-    .then(fetchPpp)
+    .then(fetchExchangedRates(openexchangeratesApiKey))
+    .then(fetchPpp(quandlApiKey))
     .then(getPppConversionFactor)
     .catch(() => {
       try {
