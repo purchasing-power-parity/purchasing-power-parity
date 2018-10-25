@@ -1,6 +1,6 @@
 # Purchasing Power Parity
 
-[![Build Status](https://travis-ci.org/rwieruch/purchasing-power-parity.svg?branch=master)](https://travis-ci.org/rwieruch/purchasing-power-parity)
+[![Build Status](https://travis-ci.org/rwieruch/purchasing-power-parity.svg?branch=master)](https://travis-ci.org/rwieruch/purchasing-power-parity) [![Greenkeeper badge](https://badges.greenkeeper.io/rwieruch/purchasing-power-parity.svg)](https://greenkeeper.io/)
 
 Not everyone is able to pay for the default pricings of the western world. Online products should be made affordable for everyone around the world. This package is a simple way to make [Purchasing Power Parity](https://en.wikipedia.org/wiki/Purchasing_power_parity) available in your browser. See how it could look like in your application for someone buying your product from another country:
 
