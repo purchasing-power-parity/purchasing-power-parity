@@ -4,7 +4,7 @@
   "description": "Make your stuff affordable for everyone around the globe.",
   "main": "lib/index.js",
   "dependencies": {
-    "axios": "^0.17.0"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
