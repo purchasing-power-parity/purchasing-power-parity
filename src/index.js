@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const GEO_API_URL = 'https://freegeoip.net/json/';
+const GEO_API_URL = 'https://freegeoip.app/json/';
 const COUNTRY_META_API = 'https://restcountries.eu/rest/v2/alpha/';
 const EXCHANGE_RATES_API = 'https://openexchangerates.org/api/latest.json';
 const QUANDL_API = 'https://www.quandl.com/api/v3/';
