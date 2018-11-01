@@ -1,6 +1,6 @@
 {
   "name": "purchasing-power-parity",
-  "version": "1.0.9",
+  "version": "1.1.1",
   "description": "Make your stuff affordable for everyone around the globe.",
   "main": "lib/index.js",
   "dependencies": {
