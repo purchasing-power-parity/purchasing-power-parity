@@ -1,4 +1,7 @@
 import axios from 'axios';
+import {toPairs, fromPairs, findIndex} from 'lodash'
+import {countries} from '../countries'
+import {codes} from '../codes'
 
 const GEO_API_URL = 'https://freegeoip.app/json/';
 const COUNTRY_META_API = 'https://restcountries.eu/rest/v2/alpha/';
@@ -19,9 +22,10 @@ const mapGeoToPpp = response => ({
   countryCodeIsoAlpha2: response.data.country_code,
 });
 
-const getGeo = () =>
-  axios.get(GEO_API_URL)
-    .then(mapGeoToPpp);
+const getGeo = ([name, iso]) => Promise.resolve({countryName: name, countryCodeIsoAlpha2: iso})
+
+  // axios.get(GEO_API_URL)
+  //   .then(mapGeoToPpp);
 
 const mapCountryMetaToPpp = pppInformation => response => ({
   ...pppInformation,
@@ -76,12 +80,14 @@ const getPppConversionFactor = pppInformation => ({
   pppConversionFactor: computePppConversionFactor(pppInformation),
 });
 
-const getPpp = (openexchangeratesApiKey, quandlApiKey) =>
-  getGeo()
+
+const getPpp = (country, openexchangeratesApiKey, quandlApiKey) =>
+  getGeo(country)
     .then(fetchCountryMeta)
     .then(fetchExchangedRates(openexchangeratesApiKey))
     .then(fetchPpp(quandlApiKey))
     .then(getPppConversionFactor)
+    .then(data => result.push({name: data.countryName, ppp: data.pppConversionFactor}))
     .catch(() => {
       try {
         throw new Error('Failed to fetch purchasing parity power.');
@@ -89,5 +95,28 @@ const getPpp = (openexchangeratesApiKey, quandlApiKey) =>
         throw e;
       }
     });
+
+const okey = 'f13b84cb0b2a4fbfb1fe48a4ab6f0b12'
+const qkey = 'jiuY6X2rvBMnUDhR7PWB'
+
+
+
+let result = {}
+const arrayedCountries = toPairs(countries)
+
+const doThing = () => arrayedCountries.forEach(pair => {
+  const index = findIndex(codes, code => code.Name.toLowerCase() == pair[1].name)
+  if (index < 0) {
+    result.push('no result found for' + pair[0])
+    return
+  }
+
+  const isoCode = codes[index].Code
+  result[isoCode] = pair[1].ppp
+
+  console.log(result)
+})
+
+doThing()
 
 export default getPpp;
