@@ -50,7 +50,7 @@ So you can adjust your prices when the `pppConversionFactor` goes below 1 and ad
 }
 ```
 
-The `currencyMain.exchangeRate` property is used to compute the `pppConversionFactor` by using the `ppp` property.
+The `currencyMain.exchangeRate` and `ppp` property are used to compute the `pppConversionFactor`.
 
 ## Limitations
 
