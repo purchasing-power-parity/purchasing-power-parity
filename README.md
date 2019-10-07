@@ -12,19 +12,16 @@ Not everyone is able to pay for the default pricings of the western world. Onlin
 
 `npm install purchasing-power-parity`
 
-* get your [OpenExchangeRates API Key](https://openexchangerates.org/)
-* get your [Quandl API Key](https://docs.quandl.com/docs/getting-started)
-
 **Use:**
 
 ```js
-import getPpp from 'purchasing-power-parity';
+import fetchPPP from 'purchasing-power-parity';
 
 let originalPrice = 99.99;
 let discountPrice;
 
-getPpp(OPEN_EXCHANGE_RATES_API_KEY, QUANDL_API_KEY).then((ppp) => {
-  discountPrice = ppp.pppConversionFactor * originalPrice;
+fetchPPP(OPEN_EXCHANGE_RATES_API_KEY, QUANDL_API_KEY).then((response) => {
+  discountPrice = response.ppp.pppConversionFactor * originalPrice;
 });
 ```
 
@@ -53,7 +50,7 @@ So you can adjust your prices when the `pppConversionFactor` goes below 1 and ad
 }
 ```
 
-The `currencyMain` property with its `exchangeRate` property is used to compute the `pppConversionFactor` by using the `ppp`.
+The `currencyMain.exchangeRate` property is used to compute the `pppConversionFactor` by using the `ppp` property.
 
 ## Limitations
 
@@ -62,7 +59,7 @@ The `currencyMain` property with its `exchangeRate` property is used to compute 
 
 ## Who uses PPP?
 
-This node package was inspired by [Wesbos](https://twitter.com/wesbos) who sells his courses with PPP. There are other people which make their products affordable to everyone around the world by using PPP. You can add your project/company/product/service/... to the list when you are using this package:
+This node package was inspired by [Wes Bos](https://twitter.com/wesbos) who sells his courses with PPP. There are other people which make their products affordable to everyone around the world by using PPP. You can add your project/company/product/service/... to the list when you are using this package:
 
 * [Road to React](https://roadtoreact.com/)
 * ...
