@@ -31,22 +31,25 @@ So you can adjust your prices when the `pppConversionFactor` goes below 1 and ad
 
 ```js
 {
-  countryCodeIsoAlpha2: "IN",
-  countryCodeIsoAlpha3: "IND",
-  countryName: "India",
-  currenciesCountry: [{
-    code: "INR",
-    name: "Indian rupee",
-    symbol: "₹"
-  }],
-  currencyMain: {
-    exchangeRate: 65.06,
-    code: "INR",
-    name: "Indian rupee",
-    symbol: "₹"
-  },
-  ppp: 17.536,
-  pppConversionFactor: 0.2695358130956041,
+  "ppp": {
+    "countryCodeIsoAlpha2": "ID",
+    "currenciesCountry": [
+      {
+        "code": "IDR",
+        "name": "Indonesian rupiah",
+        "symbol": "Rp"
+      }
+    ],
+    "countryCodeIsoAlpha3": "IDN",
+    "currencyMain": {
+      "exchangeRate": 14154,
+      "code": "IDR",
+      "name": "Indonesian rupiah",
+      "symbol": "Rp"
+    },
+    "ppp": 4242.36,
+    "pppConversionFactor": 0.29972869860110213
+  }
 }
 ```
 
