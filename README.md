@@ -20,7 +20,7 @@ import fetchPPP from 'purchasing-power-parity';
 let originalPrice = 99.99;
 let discountPrice;
 
-fetchPPP(OPEN_EXCHANGE_RATES_API_KEY, QUANDL_API_KEY).then((response) => {
+fetchPPP().then(response => {
   discountPrice = response.ppp.pppConversionFactor * originalPrice;
 });
 ```
