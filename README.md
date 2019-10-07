@@ -25,7 +25,9 @@ fetchPPP().then(response => {
 });
 ```
 
-So you can adjust your prices when the `pppConversionFactor` goes below 1 and add an optional banner for your customers to make them aware of it. What other information is in the returned PPP object?
+If you don't want to use this library, you can also use the [API](https://api.purchasing-power-parity.com/?target=ID) directly where you are able to pass the country code yourself. Otherwise, this library will figure out the location of the user itself.
+
+After all, you can adjust your prices when the `pppConversionFactor` goes below 1 and add an optional banner for your customers to make them aware of it. What other information is in the returned PPP object?
 
 **ppp-object:**
 
