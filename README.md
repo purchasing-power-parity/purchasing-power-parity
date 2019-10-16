@@ -33,25 +33,17 @@ After all, you can adjust your prices when the `pppConversionFactor` goes below 
 
 ```js
 {
-  "ppp": {
-    "countryCodeIsoAlpha2": "ID",
-    "currenciesCountry": [
-      {
-        "code": "IDR",
-        "name": "Indonesian rupiah",
-        "symbol": "Rp"
-      }
-    ],
-    "countryCodeIsoAlpha3": "IDN",
-    "currencyMain": {
-      "exchangeRate": 14154,
-      "code": "IDR",
-      "name": "Indonesian rupiah",
-      "symbol": "Rp"
-    },
-    "ppp": 4242.36,
-    "pppConversionFactor": 0.29972869860110213
-  }
+  countryCodeIsoAlpha2: 'ID',
+  countryName: 'Indonesia',
+  currenciesCountry: [ { code: 'IDR', name: 'Indonesian rupiah', symbol: 'Rp' } ],
+  countryCodeIsoAlpha3: 'IDN',
+  currencyMain:
+   { exchangeRate: 14188,
+     code: 'IDR',
+     name: 'Indonesian rupiah',
+     symbol: 'Rp' },
+  ppp: 4242.36,
+  pppConversionFactor: 0.299010431350437
 }
 ```
 
@@ -59,20 +51,20 @@ The `currencyMain.exchangeRate` and `ppp` property are used to compute the `pppC
 
 ## Limitations
 
-* runs only in the browser
-* takes only USD as baseline
+- runs only in the browser
+- takes only USD as baseline
 
 ## Who uses PPP?
 
 This node package was inspired by [Wes Bos](https://twitter.com/wesbos) who sells his courses with PPP. There are other people which make their products affordable to everyone around the world by using PPP. You can add your project/company/product/service/... to the list when you are using this package:
 
-* [Road to React](https://roadtoreact.com/)
-* ...
+- [Road to React](https://roadtoreact.com/)
+- ...
 
 ## Contribution
 
 The project is in an early stage, so please feel free to contribute to it. It works, but it could be more robust and improved. If you want to know how PPP works, you can read up this [short article](https://www.sapling.com/6218206/calculate-purchasing-power-parity). I would love to see you contributing to it:
 
-* create an Issue
-* discuss with maintainers and contributors about the issue
-* create a Pull Request if the issue should be solved
+- create an Issue
+- discuss with maintainers and contributors about the issue
+- create a Pull Request if the issue should be solved
