@@ -33,17 +33,21 @@ After all, you can adjust your prices when the `pppConversionFactor` goes below 
 
 ```js
 {
-  countryCodeIsoAlpha2: 'ID',
-  countryName: 'Indonesia',
-  currenciesCountry: [ { code: 'IDR', name: 'Indonesian rupiah', symbol: 'Rp' } ],
-  countryCodeIsoAlpha3: 'IDN',
-  currencyMain:
-   { exchangeRate: 14188,
-     code: 'IDR',
-     name: 'Indonesian rupiah',
-     symbol: 'Rp' },
-  ppp: 4242.36,
-  pppConversionFactor: 0.299010431350437
+  "countryCodeIsoAlpha2": "AR",
+  "currenciesCountry": {
+    "ARS": {
+      "name": "Argentine peso",
+      "symbol": "$"
+    }
+  },
+  "countryCodeIsoAlpha3": "ARG",
+  "currencyMain": {
+    "exchangeRate": 99.148857,
+    "name": "Argentine peso",
+    "symbol": "$"
+  },
+  "ppp": 26.526,
+  "pppConversionFactor": 0.2675371234990636
 }
 ```
 
