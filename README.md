@@ -17,12 +17,15 @@ Not everyone is able to pay for the default pricings of the western world. Onlin
 ```js
 import fetchPPP from 'purchasing-power-parity';
 
-let originalPrice = 99.99;
-let discountPrice;
+// declare a function for easy use
+const getDiscountedPrice = async price => {
+  const { ppp } = await fetchPPP()
+  const ppp.pppConversionFactor * price
+}
 
-fetchPPP().then(response => {
-  discountPrice = response.ppp.pppConversionFactor * originalPrice;
-});
+// usage
+const originalPrice = 99.99;
+getDiscountedPrice(originalPrice).then((discountedPrice) => console.log(`Discounted Price: ${discountedPrice}`))
 ```
 
 If you don't want to use this library, you can also use the [API](https://api.purchasing-power-parity.com/?target=ID) directly where you are able to pass the country code yourself. Otherwise, this library will figure out the location of the user itself.
