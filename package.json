@@ -1,33 +1,27 @@
 {
   "name": "purchasing-power-parity",
-  "version": "2.0.2",
-  "description": "Make your goods affordable for everyone around the world.",
-  "main": "lib/index.js",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
   "dependencies": {
-    "axios": "^0.17.0"
+    "@tanstack/react-query": "^5.90.21",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/node": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "nodemon": "^1.19.3"
-  },
-  "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js",
-    "compile": "babel src -d lib/ src/",
-    "prepublish": "npm run compile",
-    "test": "echo \"No test specified\" && exit 0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rwieruch/purchasing-power-parity.git"
-  },
-  "keywords": [],
-  "author": "“Robin <“wrobin@gmx.net”> (https://www.robinwieruch.de)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rwieruch/purchasing-power-parity/issues"
-  },
-  "homepage": "http://purchasing-power-parity.com"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
